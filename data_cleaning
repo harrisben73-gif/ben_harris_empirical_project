@@ -4,4 +4,18 @@ import pandas as pd
 import numpy as np 
 import openpyxl
 
+# Loading the dataset into a pandas DataFrame
+# Verifying the first few rows of the dataset to understand its structure
+
+clubstats = pd.read_csv('pl_dataset_2526_clubstats.csv')
+print(clubstats.head())
+
+playerstats = pd.read_csv('pl_dataset_2526_playerstats.csv')
+print(playerstats.head())
+
+clubwage = pd.read_csv('pl_dataset_2526_clubwage.csv')
+print(clubwage.head())
+
+playerwage = pd.read_csv('pl_dataset_2526_playerwage.csv')
+print(playerwage.head())
 
