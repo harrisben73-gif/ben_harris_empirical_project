@@ -1,6 +1,5 @@
-﻿,,,,Team Playing Time ,,,,Team Performances ,,,,,,,,Team Performances - Miscellaneous,,,,,,,Per 90 Minutes ,,,,
-Squad,Players ,Average Age,Average Possession ,Matches Played ,Starts,Minutes,Full 90s,Goals (G) ,Assists (A) ,G+A,Non-Penalty Goals ,Penalties Scored (PK) ,Penalties Attempted,Yellow Cards ,Red Cards ,Fouls Commited ,Fouls Drawn ,Offsides,Crosses,Interceptions ,Tackles Won ,Own Goals ,Goals,Assists,G+A,G-PK,G+A-PK
-Arsenal,24,26.7,57,31,341,"2,790",31,57,43,100,54,3,,40,0,316,327,45,580,216,279,1,1.84,1.39,3.23,1.74,3.13
+﻿Squad,Players ,Average Age,Average Possession ,Matches Played ,Starts,Minutes,Full 90s,Goals (G) ,Assists (A) ,G+A,Non-Penalty Goals ,Penalties Scored (PK) ,Penalties Attempted,Yellow Cards ,Red Cards ,Fouls Commited ,Fouls Drawn ,Offsides,Crosses,Interceptions ,Tackles Won ,Own Goals ,Goals,Assists,G+A,G-PK,G+A-PK
+Arsenal,24,26.7,57,31,341,"2,790",31,57,43,100,54,3,3,40,0,316,327,45,580,216,279,1,1.84,1.39,3.23,1.74,3.13
 Aston Villa,30,28.5,53.7,31,341,"2,790",31,40,29,69,40,0,0,47,1,310,387,34,498,180,280,1,1.29,0.94,2.23,1.29,2.23
 Bournemouth,26,25.7,50.4,31,341,"2,790",31,46,27,73,42,4,5,71,1,367,311,59,623,284,314,2,1.48,0.87,2.35,1.35,2.23
 Brentford,24,26,47.1,31,341,"2,790",31,45,29,74,39,6,8,58,1,329,280,51,538,270,273,3,1.45,0.94,2.39,1.26,2.19
@@ -20,7 +19,3 @@ Sunderland,29,25.8,43.6,31,341,"2,790",31,29,17,46,25,4,5,65,2,322,321,48,486,23
 Tottenham Hotspur,29,26,50,31,341,"2,790",31,39,31,70,39,0,0,77,4,362,297,48,627,237,363,0,1.26,1,2.26,1.26,2.26
 West Ham United,32,27,42.3,31,341,"2,790",31,34,22,56,31,3,3,54,3,341,317,59,501,292,326,2,1.1,0.71,1.81,1,1.71
 Wolves,29,26.6,43.2,31,341,"2,790",31,23,16,39,21,2,4,69,3,409,332,42,569,248,341,4,0.74,0.52,1.26,0.68,1.19
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,

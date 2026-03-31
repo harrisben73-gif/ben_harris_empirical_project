@@ -8,14 +8,21 @@ import openpyxl
 # Verifying the first few rows of the dataset to understand its structure
 
 clubstats = pd.read_csv('pl_dataset_2526_clubstats.csv')
-print(clubstats.head())
+# print(clubstats.head())
 
 playerstats = pd.read_csv('pl_dataset_2526_playerstats.csv')
-print(playerstats.head())
+# print(playerstats.head())
 
 clubwage = pd.read_csv('pl_dataset_2526_clubwage.csv')
-print(clubwage.head())
+# print(clubwage.head())
 
 playerwage = pd.read_csv('pl_dataset_2526_playerwage.csv')
-print(playerwage.head())
+# print(playerwage.head())
 
+# Checking for missing values in each dataset
+# Can see that there are only some missing values for players nation
+
+print(clubstats.isnull().sum())
+print(playerstats.isnull().sum())
+print(clubwage.isnull().sum())
+print(playerwage.isnull().sum())
