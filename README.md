@@ -21,3 +21,15 @@ For this project I will be using multiple different software systems, listed as 
 
 ## My Data 
 
+For this project I had to harvest data from multiple sources and combine them into one Excel spreadsheet for easier analysis. 
+
+💷 For salary data I used the well known site Capology, which is considered a reliable source for football salary data
+
+[View the salary data](https://www.capology.com/uk/premier-league/salaries/)
+
+⚽️ For player statistics I used FBREF as it had the most accurate and up to date data for the 2025/26 Premier League season
+
+[View the player statistics data](https://fbref.com/en/comps/9/stats/Premier-League-Stats)
+
+
+
