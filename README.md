@@ -31,5 +31,3 @@ For this project I had to harvest data from multiple sources and combine them in
 
 [View the player statistics data](https://fbref.com/en/comps/9/stats/Premier-League-Stats)
 
-
-
