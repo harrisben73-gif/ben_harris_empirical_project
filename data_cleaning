@@ -20,9 +20,39 @@ playerwage = pd.read_csv('pl_dataset_2526_playerwage.csv')
 # print(playerwage.head())
 
 # Checking for missing values in each dataset
-# Can see that there are only some missing values for players nation
+# Can see that there are only some missing values for a players nation
 
-print(clubstats.isnull().sum())
-print(playerstats.isnull().sum())
-print(clubwage.isnull().sum())
-print(playerwage.isnull().sum())
+# print(clubstats.isnull().sum())
+# print(playerstats.isnull().sum())
+# print(clubwage.isnull().sum())
+# print(playerwage.isnull().sum())
+
+# Standardising the wage data so that all wages are in GBP for both player wages and club wages 
+
+import re 
+
+def extract_pounds(value):
+    if pd.isna(value):
+        return None
+    
+    value = str(value)
+
+    match = re.search(r'[£\xa3]\s*([\d,]+)', value)
+
+    if match:
+        return int(match.group(1).replace(",", ""))
+    return None
+
+# Applying the function to the 'Wage' column in playerwage and clubwage datasets
+# Printing out the first few rows of the new columns we can see that the function has worked and all wages are now in GBP and in a numerical format which will allow us to perform calculations on them in the future
+
+playerwage['Weekly Wages (GBP)'] = playerwage['Weekly Wages'].apply(extract_pounds)
+playerwage['Annual Wages (GBP)'] = playerwage['Annual Wages'].apply(extract_pounds)
+
+clubwage['Weekly Wages (GBP)'] = clubwage['Weekly Wages'].apply(extract_pounds)
+clubwage['Annual Wages (GBP)'] = clubwage['Annual Wages'].apply(extract_pounds)
+
+print(playerwage[['Player', 'Weekly Wages (GBP)', 'Annual Wages (GBP)']].head())
+print(clubwage[['Squad', 'Weekly Wages (GBP)', 'Annual Wages (GBP)']].head())
+
+
