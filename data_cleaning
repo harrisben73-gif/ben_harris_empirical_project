@@ -52,7 +52,41 @@ playerwage['Annual Wages (GBP)'] = playerwage['Annual Wages'].apply(extract_poun
 clubwage['Weekly Wages (GBP)'] = clubwage['Weekly Wages'].apply(extract_pounds)
 clubwage['Annual Wages (GBP)'] = clubwage['Annual Wages'].apply(extract_pounds)
 
-print(playerwage[['Player', 'Weekly Wages (GBP)', 'Annual Wages (GBP)']].head())
-print(clubwage[['Squad', 'Weekly Wages (GBP)', 'Annual Wages (GBP)']].head())
+# print(playerwage[['Player', 'Weekly Wages (GBP)', 'Annual Wages (GBP)']].head())
+# print(clubwage[['Squad', 'Weekly Wages (GBP)', 'Annual Wages (GBP)']].head())
 
+# Dropping the original wage columns as they are no longer needed and we have the new columns with the cleaned data
 
+playerwage.drop(['Weekly Wages', 'Annual Wages'], axis = 1, inplace = True)
+clubwage.drop(['Weekly Wages', 'Annual Wages'], axis = 1, inplace = True) 
+
+# Checking the number of rows and columns in each dataset
+
+print('Club Stats Shape:', clubstats.shape)
+print('Club Wage Shape:', clubwage.shape)
+print('Player Stats Shape:', playerstats.shape)
+print('Player Wage Shape:', playerwage.shape)
+
+# From this we can see there is a different number of rows in each dataset, which means that all players on playerwage are not on playerstats 
+# Therefore, we can merge that data togther to create a more complete dataset for player stats and wages, and we can do the same for club stats and wages
+
+merged_player_data = pd.merge(playerstats, playerwage, on = 'Player', how = 'inner')
+print(merged_player_data.head())
+print('Merged Player Data Shape:', merged_player_data.shape)
+
+# Checking the differences between the club names in each dataset so we can merge them 
+# We can see that there are some differences in the club names, for example they have hidden spaces, which we can fix now
+
+print(set(clubstats['Squad']) - set(clubwage['Squad']))
+print(set(clubwage['Squad']) - set(clubstats['Squad']))
+
+# Removing hidden spaces from the club names in both datasets to ensure they match for merging
+
+clubstats['Squad'] = clubstats['Squad'].str.replace('\xa0', '', regex = False).str.strip().str.lower()
+clubwage['Squad'] = clubwage['Squad'].str.replace('\xa0', '', regex = False).str.strip().str.lower()
+
+# Merging the club stats and club wage datasets together on the 'Squad' column to create a more complete dataset for club stats and wages
+
+merged_club_data = pd.merge(clubstats, clubwage, on = 'Squad', how = 'inner')
+print(merged_club_data.head())
+print('Merged Club Data Shape:', merged_club_data.shape)
