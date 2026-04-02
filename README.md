@@ -31,3 +31,20 @@ For this project I had to harvest data from multiple sources and combine them in
 
 [View the player statistics data](https://fbref.com/en/comps/9/stats/Premier-League-Stats)
 
+# Project Structure 
+
+ben_harris_empirical_project/ 
+- data/
+    - raw/
+        - pl_dataset_2526_clubstats.csv/
+        - pl_dataset_2526_clubwage.csv/
+        - pl_dataset_2526_playerstats.csv/
+        - pl_dataset_2526_playerwage.csv/
+    - cleaned/ 
+        - merged_club_data/ 
+        - merged_player_data/
+- scripts/ 
+    - data_cleaning.py/ 
+- README.md/ 
+
+
