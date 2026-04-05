@@ -3,14 +3,13 @@
 import sqlite3
 import subprocess
 import pandas as pd
+import openpyxl
 
 result = subprocess.run(["wsl", "ls", "-la"], capture_output=True, text=True)
 
 print(sqlite3.sqlite_version)
 print(result.stdout)
 
-# Changing the goalkeeper data from the original xlsx file to a new csv file
 
-pl_dataset_2526_gkstats = pd.read_excel('PL Goalkeeper Statistics.xlsx')
-pl_dataset_2526_gkstats.to_csv('pl_dataset_2526_gkstats.csv', index=False) 
+
 
