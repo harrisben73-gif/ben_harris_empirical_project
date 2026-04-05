@@ -1,0 +1,9 @@
+# Importing sqlite3 and subprocess so we can work with both SQLite and Linux for this section of the project analysing goalkeepers specifically 
+
+import sqlite3
+import subprocess
+
+result = subprocess.run(["wsl", "ls", "-la"], capture_output=True, text=True)
+
+print(sqlite3.sqlite_version)
+print(result.stdout)
