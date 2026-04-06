@@ -90,3 +90,13 @@ clubwage['Squad'] = clubwage['Squad'].str.replace('\xa0', '', regex = False).str
 merged_club_data = pd.merge(clubstats, clubwage, on = 'Squad', how = 'inner')
 print(merged_club_data.head())
 print('Merged Club Data Shape:', merged_club_data.shape)
+
+# Fixing the nationality column in merged_player_data so it just shows the three letter acronym for the country, as currently it shows the country name and the three letter acronym which is not ideal for analysis
+# Finding out what the column name is 
+
+print(merged_player_data.columns)
+
+# See that the column is called Nation_x
+
+merged_player_data['Nation_x'] = merged_player_data['Nation_x'].str.split().str[-1]
+print(merged_player_data[['Player', 'Nation_x']].head())

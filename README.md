@@ -10,6 +10,8 @@ During this project I will be looking at analysing a dataset about Premier Leagu
 
 ## Installation 
 
+git clone https://github.com/harrisben73-gif/ben_harris_empirical_project.git
+
 For this project I will be using multiple different software systems, listed as follows on a Windows 10 operating system:  
 
 |Software | Versions |
@@ -47,4 +49,5 @@ ben_harris_empirical_project/
     - data_cleaning.py/ 
 - README.md/ 
 
+# Usage
 

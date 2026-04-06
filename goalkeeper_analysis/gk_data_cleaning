@@ -1,0 +1,18 @@
+# Importing sqlite3 and subprocess so we can work with both SQLite and Linux for this section of the project analysing goalkeepers specifically 
+
+import sqlite3
+import subprocess
+import pandas as pd
+import openpyxl
+
+result = subprocess.run(["wsl", "ls", "-la"], capture_output=True, text=True)
+
+print(sqlite3.sqlite_version)
+print(result.stdout)
+
+# Loading the PL Goalkeeper dataset into pandas DataFrame and checking the first few rows to understand its structure and the columns it contains. This will help us identify any cleaning or preprocessing steps we may need to take before performing our analysis on the goalkeepers.
+gkstats = pd.read_csv('goalkeeper_analysis/pl_dataset_2526_gkstats.csv')
+print(gkstats.head())
+
+ 
+
