@@ -1,0 +1,36 @@
+﻿Rank,Player,Nation,Position,Squad,Age,Born,Matches Played ,Starts,Minutes,Full 90s,Goals Against ,Goals Against per 90 ,Shots on Target Against ,Saves,Save Percentage ,Wins,Draws,Losses,Clean Sheets ,Clean Sheet Percentage,Penalties Attempted ,Penalties Scored,Penalties Saved,Penalties Off Target ,Penalty Save Percentage 
+1,Alisson,br BRA,GK,Liverpool,33-185,1992,25,25,"2,250",25,30,1.2,84,56,66.7,13,7,5,8,32,2,2,0,0,0
+2,Alphonse Areola,fr FRA,GK,West Ham United,33-037,1993,20,20,"1,800",20,37,1.85,108,76,70.4,4,5,11,0,0,6,5,0,1,0
+3,Altay Bayındır,tr TUR,GK,Manchester Utd,27-356,1998,6,6,540,6,11,1.83,24,13,54.2,2,1,3,0,0,0,0,0,0,N/A
+4,Walter Benítez,ar ARG,GK,Crystal Palace,33-076,1993,1,1,90,1,0,0,3,3,100,0,1,0,1,100,1,0,0,1,N/A
+5,Marco Bizot,nl NED,GK,Aston Villa,35-026,1991,5,4,405,4.5,8,1.78,20,13,65,2,1,1,2,50,1,1,0,0,0
+6,Karl Darlow,wls WAL,GK,Leeds United,35-179,1990,15,15,"1,350",15,19,1.27,53,36,67.9,3,6,6,3,20,2,2,0,0,0
+7,Gianluigi Donnarumma,it ITA,GK,Manchester City,27-039,1999,27,27,"2,430",27,24,0.89,86,61,72.1,17,7,3,11,40.7,1,0,1,0,100
+8,Martin Dúbravka,sk SVK,GK,Burnley,37-080,1989,31,31,"2,790",31,61,1.97,166,111,66.9,4,8,19,4,12.9,7,6,0,1,0
+9,Melker Ellborg,se SWE,GK,Sunderland,22-318,2003,3,3,270,3,2,0.67,12,10,83.3,2,0,1,1,33.3,0,0,0,0,N/A
+10,Angus Gunn,sct SCO,GK,Nottingham Forest,30-073,1996,1,0,45,0.5,0,0,0,0,,0,0,0,0,,0,0,0,0,N/A
+11,Dean Henderson,eng ENG,GK,Crystal Palace,29-024,1997,29,29,"2,610",29,35,1.21,115,84,73,10,8,11,10,34.5,5,4,1,0,20
+12,Mads Hermansen,dk DEN,GK,West Ham United,25-268,2000,11,11,990,11,20,1.82,56,36,64.3,3,3,5,4,36.4,0,0,0,0,N/A
+13,John,br BRA,GK,Nottingham Forest,30-051,1996,5,5,437,4.9,8,1.65,13,6,46.2,1,0,4,1,20,1,1,0,0,0
+14,Sam Johnstone,eng ENG,GK,Wolves,33-011,1993,12,12,"1,080",12,24,2,62,39,62.9,0,2,10,0,0,1,1,0,0,0
+15,Filip Jørgensen,dk DEN,GK,Chelsea,23-354,2002,3,2,264,2.9,4,1.36,10,6,60,1,1,0,0,0,0,0,0,0,N/A
+16,Caoimhín Kelleher,ie IRL,GK,Brentford,27-133,1998,30,30,"2,700",30,39,1.3,109,77,67.9,12,7,11,8,26.7,7,4,3,0,42.9
+17,Senne Lammens,be BEL,GK,Manchester Utd,23-272,2002,25,25,"2,250",25,32,1.28,85,57,67.1,13,9,3,5,20,4,4,0,0,0
+18,Bernd Leno,de GER,GK,Fulham,34-032,1992,31,31,"2,790",31,44,1.42,118,77,65.3,13,5,13,6,19.4,4,3,0,1,0
+19,Giorgi Mamardashvili,ge GEO,GK,Liverpool,25-188,2000,6,6,540,6,12,2,30,20,63.3,1,0,5,1,16.7,2,1,1,0,50
+20,Emiliano Martínez,ar ARG,GK,Aston Villa,33-215,1992,27,27,"2,385",26.5,29,1.09,104,76,72.1,14,5,8,8,29.6,1,0,1,0,100
+21,Stefan Ortega,de GER,GK,Nottingham Forest,33-150,1992,3,3,270,3,4,1.33,12,8,66.7,0,1,2,1,33.3,0,0,0,0,N/A
+22,Lucas Perri,br BRA,GK,Leeds United,28-116,1997,16,16,"1,440",16,29,1.81,63,38,60.3,4,6,6,3,18.8,4,4,0,0,0
+23,Đorđe Petrović,rs SRB,GK,Bournemouth,26-179,1999,31,31,"2,790",31,48,1.55,137,94,68.6,9,15,7,9,29,5,5,0,0,0
+24,Jordan Pickford,eng ENG,GK,Everton,32-029,1994,31,31,"2,790",31,35,1.13,117,85,71.8,13,7,11,11,35.5,3,2,1,0,33.3
+25,Nick Pope,eng ENG,GK,Newcastle United,33-351,1992,22,22,"1,966",21.8,32,1.46,97,67,69.1,8,4,10,7,31.8,2,2,0,0,0
+26,Aaron Ramsdale,eng ENG,GK,Newcastle United,27-326,1998,10,9,824,9.2,13,1.42,31,20,64.5,4,2,3,1,11.1,2,2,0,0,0
+27,David Raya,es ESP,GK,Arsenal,30-202,1995,31,31,"2,790",31,22,0.71,72,49,69.4,21,7,3,15,48.4,0,0,0,0,
+28,Robin Roefs,nl NED,GK,Sunderland,23-078,2003,28,28,"2,520",28,34,1.21,115,84,72.2,9,10,9,8,28.6,3,2,1,0,33.3
+29,José Sá,pt POR,GK,Wolves,33-078,1993,19,19,"1,710",19,30,1.58,78,50,64.1,3,6,10,4,21.1,2,2,0,0,0
+30,Robert Sánchez,es ESP,GK,Chelsea,28-138,1997,29,29,"2,524",28,36,1.28,115,79,69.6,12,8,9,9,31,1,1,0,0,0
+31,Matz Sels,be BEL,GK,Nottingham Forest,34-038,1992,24,23,"2,038",22.6,31,1.37,93,66,71,7,7,9,6,26.1,4,4,0,0,0
+32,James Trafford,eng ENG,GK,Manchester City,23-177,2002,3,3,270,3,4,1.33,14,11,78.6,1,0,2,1,33.3,1,1,0,0,0
+33,Hákon Valdimarsson,is ISL,GK,Brentford,24-174,2001,1,1,90,1,3,3,4,1,25,1,0,0,0,0,0,0,0,0,
+34,Bart Verbruggen,nl NED,GK,Brighton,23-230,2002,31,31,"2,790",31,37,1.19,117,84,72.6,11,10,10,7,22.6,6,5,1,0,16.7
+35,Guglielmo Vicario,it ITA,GK,Tottenham Hotspur,29-180,1996,31,31,"2,790",31,50,1.61,131,83,63.4,7,9,15,7,22.6,2,2,0,0,0
