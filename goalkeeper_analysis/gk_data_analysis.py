@@ -15,11 +15,16 @@ df['weekly_wages_clean'] = (df['Weekly Wages'].str.replace(r"[£,]", "", regex=T
 df.to_sql('gk_combinedsql', conn, if_exists='replace', index=False)
 
 # Printing the first 5 rows of the SQL table to verify it has been created correctly
-print(pd.read_sql_query("SELECT * FROM gk_combinedsql LIMIT 5", conn))
+# print(pd.read_sql_query("SELECT * FROM gk_combinedsql LIMIT 5", conn))
 
 # Finding the average wage of all the goalkeepers in the dataset
 avg_wage = pd.read_sql_query("""SELECT AVG(weekly_wages_clean) AS avg_wage FROM gk_combinedsql""", conn)
 print(f"The average weekly wage of the goalkeepers in the dataset is: £{round(avg_wage['avg_wage'].iloc[0])}")
 
+# Finding the top 10 highest paid goalkeepers in the dataset
+top_paid_gks = pd.read_sql_query("""SELECT Player, Squad_x, weekly_wages_clean FROM gk_combinedsql ORDER BY weekly_wages_clean DESC LIMIT 10""", conn)
+print("The top 10 highest paid goalkeepers in the dataset are:", top_paid_gks.values.tolist())
 
-
+# Finding the top 10 goalkeepers by save percentage in the dataset
+top_save_percentage_gks = pd.read_sql_query("""SELECT Player, Squad_x, 'Save Percentage' FROM gk_combinedsql ORDER BY 'Save Percentage' DESC LIMIT 10""", conn)
+print("The top 10 goalkeepers by save percentage in the dataset are:", top_save_percentage_gks.values.tolist())
