@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set working directory 
+cd /mnt/c/Users/linds/OneDrive/Documents/GitHub/ben_harris_empirical_project/goalkeeper_analysis
+
 # Removing Duplicates
 awk '!seen[$0]++' data/raw/pl_dataset_2526_gkstats.csv > temp.csv 
 
@@ -7,6 +10,6 @@ awk '!seen[$0]++' data/raw/pl_dataset_2526_gkstats.csv > temp.csv
 grep -v '^$' temp.csv > data/processed/gkstats_clean.csv 
 
 # Remove temp file 
-rm temp.csv 
+rm temp.csv
 
 echo "Cleaning complete!"
