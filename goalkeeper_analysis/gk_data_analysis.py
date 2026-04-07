@@ -7,12 +7,19 @@ import sqlite3
 conn = sqlite3.connect('sqlite/gk_database.db')
 
 # Reading in the data from the database into pandas dataframes for analysis
-
-df = pd.read_csv('data/clean/gk_combined.csv')
+df = pd.read_csv('goalkeeper_analysis/data/clean/gk_combined.csv')
 df.to_sql('gk_combinedsql', conn, if_exists='replace', index=False)
 
+# Final bit of data cleaning before analysis, converting the "Weekly Wages" column to numeric values for easier calculations
+df['weekly_wages_clean'] = (df['Weekly Wages'].str.replace(r"[£,]", "", regex=True).str.extract(r"(\d+)").astype(float))
+df.to_sql('gk_combinedsql', conn, if_exists='replace', index=False)
 
-# Verifying it has worked 
-print(df.head())
-print(df.columns)
+# Printing the first 5 rows of the SQL table to verify it has been created correctly
+print(pd.read_sql_query("SELECT * FROM gk_combinedsql LIMIT 5", conn))
+
+# Finding the average wage of all the goalkeepers in the dataset
+avg_wage = pd.read_sql_query("""SELECT AVG(weekly_wages_clean) AS avg_wage FROM gk_combinedsql""", conn)
+print(f"The average weekly wage of the goalkeepers in £ in the dataset is: {avg_wage['avg_wage'].iloc[0]}")
+
+
 
