@@ -19,7 +19,7 @@ print(pd.read_sql_query("SELECT * FROM gk_combinedsql LIMIT 5", conn))
 
 # Finding the average wage of all the goalkeepers in the dataset
 avg_wage = pd.read_sql_query("""SELECT AVG(weekly_wages_clean) AS avg_wage FROM gk_combinedsql""", conn)
-print(f"The average weekly wage of the goalkeepers in £ in the dataset is: {avg_wage['avg_wage'].iloc[0]}")
+print(f"The average weekly wage of the goalkeepers in the dataset is: £{round(avg_wage['avg_wage'].iloc[0])}")
 
 
 
