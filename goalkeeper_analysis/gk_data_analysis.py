@@ -28,3 +28,4 @@ print("The top 10 highest paid goalkeepers in the dataset are:", top_paid_gks.va
 # Finding the top 10 goalkeepers by save percentage in the dataset
 top_save_percentage_gks = pd.read_sql_query("""SELECT Player, Squad_x, 'Save Percentage' FROM gk_combinedsql ORDER BY 'Save Percentage' DESC LIMIT 10""", conn)
 print("The top 10 goalkeepers by save percentage in the dataset are:", top_save_percentage_gks.values.tolist())
+
