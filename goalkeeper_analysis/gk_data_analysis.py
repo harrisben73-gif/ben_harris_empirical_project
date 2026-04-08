@@ -29,3 +29,28 @@ print("The top 10 highest paid goalkeepers in the dataset are:", top_paid_gks.va
 top_save_percentage_gks = pd.read_sql_query("""SELECT Player, Squad_x, 'Save Percentage' FROM gk_combinedsql ORDER BY 'Save Percentage' DESC LIMIT 10""", conn)
 print("The top 10 goalkeepers by save percentage in the dataset are:", top_save_percentage_gks.values.tolist())
 
+# Finding the correlation between them both 
+correlation = pd.read_sql_query("""
+SELECT 
+    (
+        COUNT(*) * SUM(weekly_wages_clean * "Save Percentage")
+        - SUM(weekly_wages_clean) * SUM("Save Percentage")
+    ) 
+    /
+    (
+        SQRT(
+            (COUNT(*) * SUM(weekly_wages_clean * weekly_wages_clean)
+            - POWER(SUM(weekly_wages_clean), 2))
+            *
+            (COUNT(*) * SUM("Save Percentage" * "Save Percentage")
+            - POWER(SUM("Save Percentage"), 2))
+        )
+    )
+    AS correlation
+FROM gk_combinedsql
+WHERE weekly_wages_clean IS NOT NULL
+AND "Save Percentage" IS NOT NULL;
+""", conn)
+
+print(f"The correlation is: {round(correlation['correlation'].iloc[0], 3)}")
+
