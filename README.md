@@ -15,14 +15,16 @@ git clone https://github.com/harrisben73-gif/ben_harris_empirical_project.git
 
 For this project I will be using multiple different software systems, listed as follows on a Windows 10 operating system:  
 
-|Software | Versions       |
-|---------|----------------|
-|Python   | 3.13           |
-|Pandas   | 3.0.0          |
-|Numpy    | 2.4.2          |
-|Openpyxl | 3.1.5          |
-|SQLite3  | 3.50.4         | 
-|Linux/WSL| Ubuntu 24.04.3 |
+|Software   | Versions       |
+|-----------|----------------|
+|Python     |3.13            |
+|Pandas     |3.0.0           |
+|Numpy      |2.4.2           |
+|Openpyxl   |3.1.5           |
+|SQLite3    |3.50.4          | 
+|Linux/WSL  |Ubuntu 24.04.3  |
+|Seaborn    |0.13.2          |
+|Matplotlib |3.10.8          |
 
 ## My Data 
 
