@@ -23,13 +23,15 @@ df = df.dropna()
 avg_wage = pd.read_sql_query("""SELECT AVG("Weekly Wages") AS avg_wage FROM gk_combinedsql""", conn)
 # print(f"The average weekly wage of the goalkeepers in the dataset is: £{round(avg_wage['avg_wage'].iloc[0])}")
 
+# Finding the sum of all weekly wages of the goalkeepers in the dataset
+total_wages = pd.read_sql_query("""SELECT SUM("Weekly Wages") AS total_wages FROM gk_combinedsql""", conn)
+# print(f"The total weekly wages of all the goalkeepers in the dataset is: £{total_wages['total_wages'].iloc[0]:,.2f}")
 
 # Finding the top 10 highest paid goalkeepers in the dataset
 # top_paid_gks = pd.read_sql_query("""SELECT Player, Squad_x, "Weekly Wages" FROM gk_combinedsql ORDER BY "Weekly Wages" DESC LIMIT 10""", conn)
 # print("The top 10 highest paid goalkeepers in the dataset are:", top_paid_gks.values.tolist())
 
 
-# Finding the top 10 goalkeepers by save percentage in the dataset
 # stats_df = pd.read_csv('goalkeeper_analysis/data/processed/gkstats_clean.csv')
 # print(stats_df.columns)
 # print(stats_df.head())
@@ -61,8 +63,8 @@ big_6_avg_wage = pd.read_sql_query("""
     GROUP BY Squad_x
     ORDER BY avg_wage DESC                       
 """, conn)
-print("Average weekly wages of goalkeepers in the big 6 clubs:")
-print(big_6_avg_wage)
+# print("Average weekly wages of goalkeepers in the big 6 clubs:")
+# print(big_6_avg_wage)
 
 # Now finding the overal big 6 combined average wage for goalkeepers
 big_6_combined = pd.read_sql_query("""
@@ -70,7 +72,7 @@ big_6_combined = pd.read_sql_query("""
     FROM gk_combinedsql
     WHERE Squad_x IN ('Manchester City', 'Liverpool', 'Chelsea', 'Tottenham Hotspur', 'Arsenal', 'Manchester Utd')
 """, conn)
-print(f"Overall average weekly wage of goalkeepers in the big 6 clubs: £{big_6_combined['avg_wage'][0]:,.2f}")
+# print(f"Overall average weekly wage of goalkeepers in the big 6 clubs: £{big_6_combined['avg_wage'][0]:,.2f}")
 
 # Now finding the overall average wage for goalkeepers in the dataset that are not in the big 6 clubs 
 non_big_6_combined = pd.read_sql_query("""
@@ -78,5 +80,36 @@ non_big_6_combined = pd.read_sql_query("""
     FROM gk_combinedsql
     WHERE Squad_x NOT IN ('Manchester City', 'Liverpool', 'Chelsea', 'Tottenham Hotspur', 'Arsenal', 'Manchester Utd')  
 """, conn)
-print(f"Overall average weekly wage of goalkeepers not in the big 6 clubs: £{non_big_6_combined['avg_wage'][0]:,.2f}")
+# print(f"Overall average weekly wage of goalkeepers not in the big 6 clubs: £{non_big_6_combined['avg_wage'][0]:,.2f}")
 # We can see that the average weekly wage of goalkeepers in the big 6 clubs is significantly higher than the average weekly wage of goalkeepers not in the big 6 clubs, which suggests that being in a big 6 club has a significant impact on the wages of goalkeepers.
+
+# Finding the youngest and oldest goalkeepers in the dataset and their respective ages
+# This is so we can correlate with minutes played to see a potential relationship 
+youngest_gk = pd.read_sql_query("""
+    SELECT Player, Age_x
+    FROM gk_combinedsql
+    ORDER BY Age_x ASC
+    LIMIT 1
+""", conn)
+print("The youngest goalkeeper in the dataset is:")
+print(youngest_gk)
+
+oldest_gk = pd.read_sql_query("""
+    SELECT Player, Age_x
+    FROM gk_combinedsql
+    ORDER BY Age_x DESC
+    LIMIT 1
+""", conn)
+print("The oldest goalkeeper in the dataset is:")
+print(oldest_gk)
+
+# Now creating a histogram to visualize the distribution of ages of the goalkeepers in the dataset
+plt.figure(figsize=(10, 6))
+plt.hist(df['Age_clean'], bins=range(18, 41, 3), color='forestgreen', edgecolor='black')
+plt.title('Distribution of Goalkeeper Ages')
+plt.xticks(range(18, 41))
+plt.yticks(range(0, 11, 1))
+plt.xlabel('Age (Years)')
+plt.ylabel('Frequency of Goalkeepers')
+plt.show()
+
