@@ -21,6 +21,9 @@ combined['Annual Wages'] = (combined['Annual Wages'].astype(str).str.extract(r'Â
 # Cleaning the age column as some are strings at the moment, to just the age in years
 combined['Age_clean'] = combined['Age_x'].str.split('-').str[0].astype(int)
 
+# Cleaning the minutes column to just show the number of minutes played as an integer, as some of the values are strings at the moment
+combined['Minutes'] = combined['Minutes'].str.replace(',', '').astype(int)
+
 combined.to_csv('goalkeeper_analysis/data/clean/gk_combined.csv', index=False)
 
 # Data is now cleaned and combined, I will be using this dataset for my analysis in the gk_data_analysis.py file

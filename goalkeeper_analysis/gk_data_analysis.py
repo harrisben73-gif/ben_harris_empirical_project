@@ -91,8 +91,6 @@ youngest_gk = pd.read_sql_query("""
     ORDER BY Age_x ASC
     LIMIT 1
 """, conn)
-print("The youngest goalkeeper in the dataset is:")
-print(youngest_gk)
 
 oldest_gk = pd.read_sql_query("""
     SELECT Player, Age_x
@@ -100,8 +98,14 @@ oldest_gk = pd.read_sql_query("""
     ORDER BY Age_x DESC
     LIMIT 1
 """, conn)
-print("The oldest goalkeeper in the dataset is:")
-print(oldest_gk)
+
+# Printing this output in a nice format 
+print('=' * 40)
+print('GOALKEEPER AGE ANALYSIS')
+print('=' * 40)
+print(f"Youngest: {youngest_gk['Player'][0]} (Age {youngest_gk['Age_x'][0]})")
+print(f"Oldest: {oldest_gk['Player'][0]} (Age {oldest_gk['Age_x'][0]})")
+print('=' * 40)
 
 # Now creating a histogram to visualize the distribution of ages of the goalkeepers in the dataset
 plt.figure(figsize=(10, 6))
@@ -111,5 +115,9 @@ plt.xticks(range(18, 41))
 plt.yticks(range(0, 11, 1))
 plt.xlabel('Age (Years)')
 plt.ylabel('Frequency of Goalkeepers')
-plt.show()
+# plt.show()
 
+# Now looking at finding the relationship between the age of the goalkeepers and their minutes played, to see if there is a potential relationship between the two variables
+age_minutes_correlation = df['Age_clean'].corr(df['Minutes'])
+print(f"The correlation between age and minutes played is: {age_minutes_correlation}")
+# We can see although the histogram shows a higher density of older goalkeepers there is in fact practically zero correlation
