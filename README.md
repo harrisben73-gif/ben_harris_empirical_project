@@ -8,18 +8,23 @@ Welcome, this is the repository I will be using to track work for my Data Scienc
 
 During this project I will be looking at analysing a dataset about Premier League footballers wages and statistics so far during the 2025/26 season, where most teams have played 31 out of 38 games, apart from Manchester City and Crystal Palace who have played 30 games each. 
 
+
 ## Installation 
 
 git clone https://github.com/harrisben73-gif/ben_harris_empirical_project.git
 
 For this project I will be using multiple different software systems, listed as follows on a Windows 10 operating system:  
 
-|Software | Versions |
-|---------|----------|
-|Python   | 3.13     |
-|Pandas   | 3.0.0    |
-|Numpy    | 2.4.2    |
-|Openpyxl | 3.1.5    |
+|Software   | Versions       |
+|-----------|----------------|
+|Python     |3.13            |
+|Pandas     |3.0.0           |
+|Numpy      |2.4.2           |
+|Openpyxl   |3.1.5           |
+|SQLite3    |3.50.4          | 
+|Linux/WSL  |Ubuntu 24.04.3  |
+|Seaborn    |0.13.2          |
+|Matplotlib |3.10.8          |
 
 ## My Data 
 
@@ -32,6 +37,8 @@ For this project I had to harvest data from multiple sources and combine them in
 ⚽️ For player statistics I used FBREF as it had the most accurate and up to date data for the 2025/26 Premier League season
 
 [View the player statistics data](https://fbref.com/en/comps/9/stats/Premier-League-Stats)
+
+This data was acquired on 25/03/2026, apart from the Goalkeeper Statistics, which was acquired on 05/04/2026.
 
 # Project Structure 
 
