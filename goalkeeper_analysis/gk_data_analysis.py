@@ -115,7 +115,7 @@ plt.xticks(range(18, 41))
 plt.yticks(range(0, 11, 1))
 plt.xlabel('Age (Years)')
 plt.ylabel('Frequency of Goalkeepers')
-# plt.show()
+plt.show()
 
 # Now looking at finding the relationship between the age of the goalkeepers and their minutes played, to see if there is a potential relationship between the two variables
 age_minutes_correlation = df['Age_clean'].corr(df['Minutes'])
