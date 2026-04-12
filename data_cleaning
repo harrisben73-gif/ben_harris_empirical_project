@@ -21,7 +21,6 @@ playerwage = pd.read_csv('pl_dataset_2526_playerwage.csv')
 
 # Checking for missing values in each dataset
 # Can see that there are only some missing values for a players nation
-
 # print(clubstats.isnull().sum())
 # print(playerstats.isnull().sum())
 # print(clubwage.isnull().sum())
@@ -45,7 +44,6 @@ def extract_pounds(value):
 
 # Applying the function to the 'Wage' column in playerwage and clubwage datasets
 # Printing out the first few rows of the new columns we can see that the function has worked and all wages are now in GBP and in a numerical format which will allow us to perform calculations on them in the future
-
 playerwage['Weekly Wages (GBP)'] = playerwage['Weekly Wages'].apply(extract_pounds)
 playerwage['Annual Wages (GBP)'] = playerwage['Annual Wages'].apply(extract_pounds)
 
@@ -56,12 +54,10 @@ clubwage['Annual Wages (GBP)'] = clubwage['Annual Wages'].apply(extract_pounds)
 # print(clubwage[['Squad', 'Weekly Wages (GBP)', 'Annual Wages (GBP)']].head())
 
 # Dropping the original wage columns as they are no longer needed and we have the new columns with the cleaned data
-
 playerwage.drop(['Weekly Wages', 'Annual Wages'], axis = 1, inplace = True)
 clubwage.drop(['Weekly Wages', 'Annual Wages'], axis = 1, inplace = True) 
 
 # Checking the number of rows and columns in each dataset
-
 print('Club Stats Shape:', clubstats.shape)
 print('Club Wage Shape:', clubwage.shape)
 print('Player Stats Shape:', playerstats.shape)
@@ -69,34 +65,55 @@ print('Player Wage Shape:', playerwage.shape)
 
 # From this we can see there is a different number of rows in each dataset, which means that all players on playerwage are not on playerstats 
 # Therefore, we can merge that data togther to create a more complete dataset for player stats and wages, and we can do the same for club stats and wages
-
 merged_player_data = pd.merge(playerstats, playerwage, on = 'Player', how = 'inner')
 print(merged_player_data.head())
 print('Merged Player Data Shape:', merged_player_data.shape)
 
 # Checking the differences between the club names in each dataset so we can merge them 
 # We can see that there are some differences in the club names, for example they have hidden spaces, which we can fix now
-
 print(set(clubstats['Squad']) - set(clubwage['Squad']))
 print(set(clubwage['Squad']) - set(clubstats['Squad']))
 
 # Removing hidden spaces from the club names in both datasets to ensure they match for merging
-
 clubstats['Squad'] = clubstats['Squad'].str.replace('\xa0', '', regex = False).str.strip().str.lower()
 clubwage['Squad'] = clubwage['Squad'].str.replace('\xa0', '', regex = False).str.strip().str.lower()
 
 # Merging the club stats and club wage datasets together on the 'Squad' column to create a more complete dataset for club stats and wages
-
 merged_club_data = pd.merge(clubstats, clubwage, on = 'Squad', how = 'inner')
 print(merged_club_data.head())
 print('Merged Club Data Shape:', merged_club_data.shape)
 
 # Fixing the nationality column in merged_player_data so it just shows the three letter acronym for the country, as currently it shows the country name and the three letter acronym which is not ideal for analysis
 # Finding out what the column name is 
-
 print(merged_player_data.columns)
 
 # See that the column is called Nation_x
-
 merged_player_data['Nation_x'] = merged_player_data['Nation_x'].str.split().str[-1]
 print(merged_player_data[['Player', 'Nation_x']].head())
+
+# Finding the datatypes of each column in the merged datasets to ensure they are correct for analysis
+# print(merged_player_data.info())
+print(merged_club_data.info())
+# All data is as expected apart from minutes played in both datasets and Age in merged_player_data
+# Furthermore during the merge we can see some colums have been duplicated with _x and _y at the end, we can drop the _y columns as they are duplicates of the _x columns and we can also convert the minutes played and age columns to the correct datatypes for analysis
+
+# Converting the merged_player_data 'Minutes' column to numeric 
+merged_player_data['Minutes'] = pd.to_numeric(merged_player_data['Minutes'], errors = 'coerce')
+
+# Dropping columns in merged_player_data that we will not need for our analysis 
+merged_player_data = merged_player_data.drop(['Rank_y', 'Nation_y', 'Position_y', 'Squad_y', 'Age_y'], axis = 1)
+
+# Converting the merged_club_data 'Minutes' column to numeric
+merged_club_data['Minutes'] = pd.to_numeric(merged_club_data['Minutes'], errors = 'coerce')
+
+# Dropping columns in merged_club_data that we will not need for our analysis
+merged_club_data = merged_club_data.drop(['Players _y', '% of Wages Estimated '], axis = 1)
+
+# Checking for any remaining missing values in the merged datasets
+print(merged_player_data.isnull().sum())
+print(merged_club_data.isnull().sum())
+# We can see from this that the only missing data in the merged_player_data is Minutes so could be a problem if we used this for analysis 
+# This is also missing in the merged_club_data
+# But for all other columns there is zero missing data 
+
+
