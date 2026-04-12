@@ -25,6 +25,7 @@ For this project I will be using multiple different software systems, listed as 
 |Linux/WSL  |Ubuntu 24.04.3  |
 |Seaborn    |0.13.2          |
 |Matplotlib |3.10.8          |
+|EconML     |0.16.0          |
 
 ## My Data 
 
