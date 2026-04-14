@@ -110,7 +110,7 @@ merged_player_data['Position_x'] = merged_player_data['Position_x'].replace({'FW
 merged_club_data['Minutes'] = pd.to_numeric(merged_club_data['Minutes'], errors = 'coerce')
 
 # Dropping columns in merged_club_data that we will not need for our analysis
-merged_club_data = merged_club_data.drop(['Players _y'], axis = 1)
+merged_club_data = merged_club_data.drop(['Players _y', 'Goals', 'G+A.1', 'G-PK', 'G+A-PK'], axis = 1)
 
 # Checking for any remaining missing values in the merged datasets
 print(merged_player_data.isnull().sum())
