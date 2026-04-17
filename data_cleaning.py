@@ -27,7 +27,6 @@ playerwage = pd.read_csv('pl_dataset_2526_playerwage.csv')
 # print(playerwage.isnull().sum())
 
 # Standardising the wage data so that all wages are in GBP for both player wages and club wages 
-
 import re 
 
 def extract_pounds(value):

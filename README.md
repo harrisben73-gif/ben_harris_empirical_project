@@ -42,7 +42,7 @@ For this project I had to harvest data from multiple sources and combine them in
 
 This data was acquired on 25/03/2026, apart from the Goalkeeper Statistics, which was acquired on 05/04/2026.
 
-# Project Structure 
+## Project Structure 
 
 ben_harris_empirical_project/ 
 - data/
@@ -67,5 +67,14 @@ ben_harris_empirical_project/
     - playerwage_randomforest_testing.py
 - README.md/ 
 
-# Usage
+## Usage
 
+1. Setup 
+
+I have listed the software platforms/python packages and versions of these in [Installation](#installation), which would have to be downloaded to fully clean and analyse the data I have used. 
+
+2. How to Clean the Data 
+
+By using mainly pandas and numpy to clean my data in the 'data_cleaning.py' I was firstly able to find out the main problems with my data. This included: wage data being in multiple currencies and having symbols like $£,() included in the data, some clubs having hidden spaces in their names, the nationality column showing en ENG instead of just ENG, the minutes column being a string, and the position column showing multiple positions. Luckily, I did not find many missing values, apart from in the Nationality column, which was not essential for my analysis. 
+
+3. How to Run the Analysis 
