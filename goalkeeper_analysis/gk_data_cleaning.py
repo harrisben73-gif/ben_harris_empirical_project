@@ -14,7 +14,7 @@ print(result.stdout)
 gkstats = pd.read_csv('goalkeeper_analysis/pl_dataset_2526_gkstats.csv')
 print(gkstats.head())
 
-# using Linux cleaningstats.sh and cleaningwage.sh
-# then using python to combine both of these files 
+# Using Linux cleaningstats.sh and cleaningwage.sh too double check the files 
+# Then using python to combine both of these files 
 
 

@@ -21,7 +21,7 @@ merged_club_data = pd.read_csv('data_analysis/merged_club_data.csv')
 merged_player_data_noGK = merged_player_data[merged_player_data['Position_x'] != 'GK']
 
 # Checking the columns of the dataset 
-print(merged_player_data_noGK.columns)
+# print(merged_player_data_noGK.columns)
 # print(merged_club_data.columns)
 
 # Starting the casual forest analysis 
@@ -70,6 +70,10 @@ print(model.summary2())
 # We can see that some stats have higher coefficients than others, showing their importance 
 # This is further backed up by looking at their p values 
 # But R Squared still relatively low at 0.162 
+# But p value of the overall test is statistically significant as below 0.05 
+# Therefore significant but not necessarily a strong relationship between the features and the target variable, but it is a start and we can try to improve it by adding more features or using a different model.
+
+
 
 
 
