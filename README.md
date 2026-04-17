@@ -47,15 +47,24 @@ This data was acquired on 25/03/2026, apart from the Goalkeeper Statistics, whic
 ben_harris_empirical_project/ 
 - data/
     - raw/
-        - pl_dataset_2526_clubstats.csv/
-        - pl_dataset_2526_clubwage.csv/
-        - pl_dataset_2526_playerstats.csv/
-        - pl_dataset_2526_playerwage.csv/
+        - pl_dataset_2526_clubstats.csv
+        - pl_dataset_2526_clubwage.csv
+        - pl_dataset_2526_gkstats.csv
+        - pl_dataset_2526_playerstats.csv
+        - pl_dataset_2526_playerwage.csv
     - cleaned/ 
         - merged_club_data/ 
         - merged_player_data/
 - scripts/ 
-    - data_cleaning.py/ 
+    - data_cleaning.py
+- goalkeeper_analysis/
+    - gk_data_cleaning.py
+    - gk_data_analysis.py
+    - gk_wages.csv 
+- data_analysis/
+    - clubwages_stats_analysis.py 
+    - wages_position_analysis.py 
+    - playerwage_randomforest_testing.py
 - README.md/ 
 
 # Usage
