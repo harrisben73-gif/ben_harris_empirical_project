@@ -49,6 +49,7 @@ print(f"Root Mean Squared Error: {np.sqrt(mse)}")
 print(f"R^2 Score: {r2}")
 # Therefore model shows predictions are off by about £56,296 on average, which is reseanable given the wage scale 
 # The R squared of 0.0893 is low, which means 8.93% of the variance in the weekly wages can be explained by the model, which is not very good, but it is a start and we can try to improve it by adding more features or using a different model.
+# Remember minutes has 274 missing values which may be impacting the model performance, we can try to impute those missing values and see if it improves the model performance.
 
 # Working on finding Average Treatment Effect (ATE) 
 

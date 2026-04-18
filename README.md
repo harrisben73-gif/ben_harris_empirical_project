@@ -77,4 +77,18 @@ I have listed the software platforms/python packages and versions of these in [I
 
 By using mainly pandas and numpy to clean my data in the 'data_cleaning.py' I was firstly able to find out the main problems with my data. This included: wage data being in multiple currencies and having symbols like $£,() included in the data, some clubs having hidden spaces in their names, the nationality column showing en ENG instead of just ENG, the minutes column being a string, and the position column showing multiple positions. Luckily, I did not find many missing values, apart from in the Nationality column, which was not essential for my analysis. 
 
+    - To fix the first issue I created a python function called extract_pounds(value), which starts out by checking for missing values then converts the data into a string and after this uses a regular expression to extract the number after the £ sign and finally removes the commas and converts this number into an integer
+
+    - To fix the fact that club names where slightly different in pl_dataset_2526_clubstats.csv and pl_dataset_2526_clubwage.csv, I had to firstly check the differences and then I could use the str.replace function to substitute the part of string I did not want with something else that matches the other dataset, therefore allowing us the merge both datasets by club name
+
+    - To fix the nationality column, we used a similar command called str.split, which allowed us to only keep the last word in each string, therefore allowing us to have a cleaner nationalities column if we needed to use it
+
+    - Turning the minutes column into a numeric value was a simple fix as we just used pandas to transform the strong into numeric, which was no problem as the values in the column where all integers already
+
+    - The position column was another simple fix by using the pandas function .replace again, where I knew the first position listed was the players primary position, so for example if there positions was listed as FW, MF the new column would show solely FW
+
+    - Then finally as I merged our datasets so I had statistics and wages all in two datasets merged_player_data.csv and merged_club_data.csv, I had to drop some columns that had duplicated or were irrelevant to my analysis. 
+
+    - In the end we can see that the only columns with missing data is minutes, but I did not want to remove players who did not have minute statistics as this would leave me with a significantly lower sample size
+
 3. How to Run the Analysis 
