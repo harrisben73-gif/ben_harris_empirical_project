@@ -91,4 +91,13 @@ By using mainly pandas and numpy to clean my data in the 'data_cleaning.py' I wa
 
     - In the end we can see that the only columns with missing data is minutes, but I did not want to remove players who did not have minute statistics as this would leave me with a significantly lower sample size
 
+
+I also had a small sub-project where I would be analysing the goalkeepers in the league and aim to use more Linux and SQLite code. To start with the data cleaning I used two bash scripts cleaningstats.sh and cleaningwage.sh, and the terminal after going into wsl. 
+
+    - The cleaningstats.sh file checks over the datset pl_dataset_2526_gkstats.csv from the data/raw folder and checks for duplicates and empty rows and then temporarily stores them in a file and then transfers them back to a new file called gkstats_clean.csv, which is stored in the data/processed folder. 
+
+    - The cleaningwage.sh file simply uses the pl_dataset_2526_playerwage.csv file in the data/raw folder and uses the awk command to filter players whose position is a goalkeeper and creates a new file called gk_wages.csv, storing it in data/processed 
+
+    - Then to combine both these datasets I chose to use python as this was most effecient and more likely to be accurate. In the file combiningstatswage.py I firstly saved both the clean datasets and them merged them based on player name and created the new final file called gk_combined.csv ini the folder data/clean. Then I had to perform similar things as some of the data had the same issues for example the wages, minutes and age column where I just wanted age in years not years and days. 
+
 3. How to Run the Analysis 

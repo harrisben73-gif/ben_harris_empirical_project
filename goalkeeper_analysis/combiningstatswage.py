@@ -2,6 +2,7 @@
 
 import pandas as pd 
 
+# Loading the cleaned stats and wage datasets for goalkeepers that we saved at the end of our data cleaning process into pandas DataFrames so that we can use them for our data analysis
 wages = pd.read_csv('goalkeeper_analysis/data/processed/gk_wages.csv')
 stats = pd.read_csv('goalkeeper_analysis/data/processed/gkstats_clean.csv')
 
