@@ -101,3 +101,7 @@ I also had a small sub-project where I would be analysing the goalkeepers in the
     - Then to combine both these datasets I chose to use python as this was most effecient and more likely to be accurate. In the file combiningstatswage.py I firstly saved both the clean datasets and them merged them based on player name and created the new final file called gk_combined.csv ini the folder data/clean. Then I had to perform similar things as some of the data had the same issues for example the wages, minutes and age column where I just wanted age in years not years and days. 
 
 3. How to Run the Analysis 
+
+After cleaning all the data I had two main datasets, which I used for the analysis called merged_player_data.csv and merged_club_data.csv, which had come from merging the cleaned versions of pl_dataset_2526_playerstats.csv with pl_dataset_2526_playerwage.csv and pl_dataset_2526_clubstats.csv with pl_dataset_2526_clubwage.csv using python.
+
+For my analysis I wanted to come up with some visual as well as some statistical insights, which meant importing specific python functions like matplotlib, seaborn, sklearn and statsmodels as this would help us get a better understanding of the data and make it easier to spot trends. 
