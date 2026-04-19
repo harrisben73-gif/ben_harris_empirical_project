@@ -104,4 +104,12 @@ I also had a small sub-project where I would be analysing the goalkeepers in the
 
 After cleaning all the data I had two main datasets, which I used for the analysis called merged_player_data.csv and merged_club_data.csv, which had come from merging the cleaned versions of pl_dataset_2526_playerstats.csv with pl_dataset_2526_playerwage.csv and pl_dataset_2526_clubstats.csv with pl_dataset_2526_clubwage.csv using python.
 
-For my analysis I wanted to come up with some visual as well as some statistical insights, which meant importing specific python functions like matplotlib, seaborn, sklearn and statsmodels as this would help us get a better understanding of the data and make it easier to spot trends. 
+For my analysis I wanted to come up with some visual as well as some statistical insights, which meant importing specific python functions like matplotlib, seaborn, sklearn and statsmodels as this would help us get a better understanding of the data and make it easier to spot trends.
+
+I will now go over the files I have used to analyse my data 
+
+    - Firstly, I created wages_position_analysis.py, which main aim was to analyse how playing a certain position can effect the amount PL footballers get paid. By using mainly matplotlib I was able to create a boxplot, which showed that as players do get further up the pitch they often do see higher wages. To further back this point up I created a table, which showed that on average goalkeepers and defenders had similar average weekly wages, but midfielders had on average £8,000, and forwards had on average £16,000 more. 
+
+    - Secondly, I created the file clubwages_stats_analysis.py, where my main aim was to rank clubs by certain statistics and then create a graph comparing their average rank to the total weekly wages of that club. Using the python function .rank I found the ranks from 10 statsitics and then found the mean of this and saved it as a new variable. Finally, I used matplotlib to plot this against the total weekly wage of all the players in the club. 
+
+    - Lastly, I created the file playerwage_randomforest_testing.py, where I was interested in computing a regression analysis using a random forest regressor and average treatment effects (ATE). Using the random forest regressor by setting Y to weekly wages and X to 13 statistics I was able to find the mean squared error and R^2 statistic. However, I also wanted to find the average treatment effects of individual statistics, which meant first having to split the population in 2 groups, above average and below average. After this I used statsmodels to provide my regression coefficients and p-values of the regression.

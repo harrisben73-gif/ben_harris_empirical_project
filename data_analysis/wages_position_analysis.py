@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns 
-# from econml import CasualForestDML
 
 # Loading the cleaned datasets that we saved at the end of our data cleaning process into pandas DataFrames so that we can use them for our data analysis
 merged_player_data = pd.read_csv('data_analysis/merged_player_data.csv')
@@ -21,7 +20,8 @@ plt.title('Distribution of Weekly Wages by Position')
 plt.xlabel('Position')
 plt.ylabel('Weekly Wages (GBP)')
 plt.xticks(rotation=45)
-# plt.show()
+plt.show()
+
 # Can see that as positions get higher up the pitch on average wages do rise 
 print('=' * 40)
 print('Average Weekly Wages by position:')
