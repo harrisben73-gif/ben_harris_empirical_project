@@ -58,13 +58,23 @@ ben_harris_empirical_project/
 - scripts/ 
     - data_cleaning.py
 - goalkeeper_analysis/
+    - data/
+        - clean/
+        - processed/
+        - raw/
+    - cleaningstats.sh
+    - cleaningwage.sh
+    - combiningstatswage.py
     - gk_data_cleaning.py
     - gk_data_analysis.py
     - gk_wages.csv 
+    - pl_dataset2526_playerwage.csv 
 - data_analysis/
     - clubwages_stats_analysis.py 
     - wages_position_analysis.py 
     - playerwage_randomforest_testing.py
+    - merged_club_data.csv
+    - merged_player_data.csv 
 - README.md/ 
 
 ## Usage
