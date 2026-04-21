@@ -13,6 +13,9 @@ merged_club_data = pd.read_csv('data_analysis/merged_club_data.csv')
 
 # print(merged_player_data.info())
 
+# Seeing number of observations in the dataset
+print('Number of Players in the dataset:', len(merged_player_data))
+
 # Summary statistics for the merged_player_data dataset - wage 
 print('=' * 40)
 print('Summary statistics for Weekly Wages (GBP):')
