@@ -9,8 +9,8 @@ merged_player_data = pd.read_csv('data_analysis/merged_player_data.csv')
 merged_club_data = pd.read_csv('data_analysis/merged_club_data.csv')
 
 # Checking the first few rows of each dataset to verify that they have been loaded correctly and to understand their structure
-print(merged_player_data.head())
-print(merged_club_data.head())
+# print(merged_player_data.head())
+# print(merged_club_data.head())
 
 # For our first but of data analysis we will be looking at the relationship between weekly wages and position 
 # We will use a boxplot to visualize the distribution of weekly wages for each position in the dataset
@@ -26,6 +26,9 @@ plt.show()
 print('=' * 40)
 print('Average Weekly Wages by position:')
 print('=' * 40)
-print(merged_player_data.groupby('Position_x')['Weekly Wages (GBP)'].mean().round(2).sort_values(ascending=False).rename_axis(None))
+positions = merged_player_data.groupby('Position_x')['Weekly Wages (GBP)'].mean().round(2).sort_values(ascending=False).rename_axis(None)
+for pos, wage in positions.items():
+    print(f' {pos:<6} £{wage:>10,.2f}')
 print('=' * 40)
 # This point is further reinforced by looking at the average weekly wages for each position, we can see that on average goalkeepers earn the least, followed by defenders, then midfielders and finally forwards who earn the most on average. This is likely due to the fact that forwards are often the most high profile players in a team and are responsible for scoring goals, which is often seen as the most important aspect of the game. Goalkeepers on the other hand are often seen as less glamorous and are not involved in scoring goals, which may explain why they earn less on average.
+
