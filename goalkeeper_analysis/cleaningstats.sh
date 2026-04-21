@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sed -i 's/\r$//' cleaningstats.sh
+
 # Set working directory 
 cd /mnt/c/Users/linds/OneDrive/Documents/GitHub/ben_harris_empirical_project/goalkeeper_analysis
 
@@ -13,3 +15,4 @@ grep -v '^$' temp.csv > data/processed/gkstats_clean.csv
 rm temp.csv
 
 echo "Cleaning complete!"
+
