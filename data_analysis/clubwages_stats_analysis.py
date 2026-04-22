@@ -85,6 +85,8 @@ sns.scatterplot(data=merged_club_data, x='average_rank', y='Weekly Wages (GBP)',
 plt.title('Average Rank vs Weekly Wages')
 plt.xlabel('Average Rank of Key Stats')
 plt.ylabel('Weekly Wages (GBP) in millions')
-plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.legend(fontsize=8, markerscale=1.5, loc='upper right', bbox_to_anchor=(1.0, 1.0))
+for i, row in merged_club_data.iterrows():
+    plt.annotate(row['Squad'], (row['average_rank'], row['Weekly Wages (GBP)']), textcoords="offset points", xytext=(0,10), ha='center', fontsize=8)
 plt.show()
 # Can see a clear negative correlation between average rank and weekly wage bill 
