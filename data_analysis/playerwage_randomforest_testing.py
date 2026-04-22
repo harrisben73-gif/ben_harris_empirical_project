@@ -44,9 +44,13 @@ y_pred = model.predict(X_test)
 from sklearn.metrics import mean_squared_error, r2_score
 mse = mean_squared_error(Y_test, y_pred)
 r2 = r2_score(Y_test, y_pred)
+print('=' * 50)
+print("Random Forest Regressor Performance:")
+print('=' * 50)
 print(f"Mean Squared Error: {mse}")
 print(f"Root Mean Squared Error: {np.sqrt(mse)}")
 print(f"R^2 Score: {r2}")
+print('=' * 50)
 # Therefore model shows predictions are off by about £56,296 on average, which is reseanable given the wage scale 
 # The R squared of 0.0893 is low, which means 8.93% of the variance in the weekly wages can be explained by the model, which is not very good, but it is a start and we can try to improve it by adding more features or using a different model.
 # Remember minutes has 274 missing values which may be impacting the model performance, we can try to impute those missing values and see if it improves the model performance.
