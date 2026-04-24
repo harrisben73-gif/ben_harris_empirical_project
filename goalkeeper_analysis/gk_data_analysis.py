@@ -43,7 +43,7 @@ total_wages = pd.read_sql_query("""SELECT SUM("Weekly Wages") AS total_wages FRO
 
 # Trying to find a correlation between the weekly wages of the goalkeepers and their save percentage, I will use the Pearson correlation coefficient for this
 correlation = df['Weekly Wages'].corr(df['Save Percentage '])
-# print(f"The correlation between weekly wages and save percentage is: {correlation}")
+print(f"The correlation between weekly wages and save percentage is: {correlation}")
 # We can see that there is a very weak positive correlation between the two variables, which suggests that there is not a strong relationship between the weekly wages of the goalkeepers and their save percentage
 # But none the less still a correlation 
 
@@ -72,7 +72,7 @@ big_6_combined = pd.read_sql_query("""
     FROM gk_combinedsql
     WHERE Squad_x IN ('Manchester City', 'Liverpool', 'Chelsea', 'Tottenham Hotspur', 'Arsenal', 'Manchester Utd')
 """, conn)
-# print(f"Overall average weekly wage of goalkeepers in the big 6 clubs: £{big_6_combined['avg_wage'][0]:,.2f}")
+print(f"Overall average weekly wage of goalkeepers in the big 6 clubs: £{big_6_combined['avg_wage'][0]:,.2f}")
 
 # Now finding the overall average wage for goalkeepers in the dataset that are not in the big 6 clubs 
 non_big_6_combined = pd.read_sql_query("""
@@ -80,8 +80,8 @@ non_big_6_combined = pd.read_sql_query("""
     FROM gk_combinedsql
     WHERE Squad_x NOT IN ('Manchester City', 'Liverpool', 'Chelsea', 'Tottenham Hotspur', 'Arsenal', 'Manchester Utd')  
 """, conn)
-# print(f"Overall average weekly wage of goalkeepers not in the big 6 clubs: £{non_big_6_combined['avg_wage'][0]:,.2f}")
-# We can see that the average weekly wage of goalkeepers in the big 6 clubs is significantly higher than the average weekly wage of goalkeepers not in the big 6 clubs, which suggests that being in a big 6 club has a significant impact on the wages of goalkeepers.
+print(f"Overall average weekly wage of goalkeepers not in the big 6 clubs: £{non_big_6_combined['avg_wage'][0]:,.2f}")
+# we can see that the average weekly wage of goalkeepers in the big 6 clubs is significantly higher than the average weekly wage of goalkeepers not in the big 6 clubs, which suggests that being in a big 6 club has a significant impact on the wages of goalkeepers.
 
 # Finding the youngest and oldest goalkeepers in the dataset and their respective ages
 # This is so we can correlate with minutes played to see a potential relationship 
