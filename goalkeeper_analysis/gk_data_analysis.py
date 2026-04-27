@@ -52,7 +52,8 @@ plt.figure(figsize=(10, 6))
 sns.regplot(data=df, x='Weekly Wages', y='Save Percentage ')
 plt.title('Relationship between Weekly Wages and Save Percentage')
 plt.xlabel('Weekly Wages (£)')
-plt.ylabel('Save Percentage (%)')
+plt.ylabel('Save Percentage (%)')#
+plt.savefig('goalkeeper_analysis/weeklywages_savepercentage.png')
 # plt.show()
 
 # Using SQL to group and aggregate goalkeepers by whether they are in a big 6 club or not 
