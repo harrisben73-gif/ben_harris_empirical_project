@@ -80,6 +80,7 @@
     The mode or most common weekly wage is at £50,000, which suggests a high concentration of players around this wage in the Premier League as this is often seen as a typical contract value. 
     Now moving onto the spread of PL footballer's weekly wages, as with a variance of about £4,000,000,000, which when square rooted translates to a standard deviation of £63,570 further suggests the inequality in the league as players like Lyle Foster earn less than 0.15% of Erling Haaland’s wage, but could there be reasons for this?
     </p>
+
     <h3>Analysis of Wages for certain Positions</h3>
     <p>For this section of my empirical project, I wanted to see the impact, that being in a certain position had on a player's wages as others like O’Hanlon think ‘that forwards and midfielders are the premium positions in the Premier League’ (2025). I thought the best way to show this visually would be to group players into their dominant position and then create an individual box plot for each one.</p>
     <img src="wages_by_position_boxplot.png" alt="Box Plot of Weekly Wages by Position" width="900" height="600">
@@ -90,7 +91,7 @@
         </tr>
         <tr>
             <td>Forward</td>
-            <td>£40,000.00</td>
+            <td>£87,916.90</td>
         </tr>
         <tr>
             <td>Midfielder</td>
@@ -105,7 +106,20 @@
             <td>£71,416.17</td>
         </tr>
     </table>
-    <p></p>
+    <p>In this box plot you can see I have removed the outliers so that we can see a more reliable dataset as forwards like Erling Haaland can distort the averages.</p>
+    <p>From this box plot we can see that on average midfielders (MF) and forwards (FW) are seen as more premium positions, due to the fact their medians and upper quartiles are greater than the goalkeepers (GK) and defenders (DF). For example, using the table below the box plot we can see more accurately the means of each position and that goalkeepers and defenders both earn £71,400 to 3 significant figures, but we see an almost 12% increase in wages of the average midfielder and then a 10% increase as we compare the average forwards wage with the midfielders. </p>
+    <p>The main reason for this is forwards are directly responsible for scoring goals, which is how you win games, as for example if a defender defends very well each game and never concedes a goal there is a chance they could still draw many games if they do not have effective forwards. As a result of this the team will gain less points than another team who has more attacking threat, which will result in a lower league position. This is especially important in the Premier League, as it gives out the most prize money due to its global recognition. Using data from Chowdhury (2025) we can see that Liverpool, who finished first, earned £65,700,000 more than Southampton who finished last, with each position earning you about £3,115,000 extra. Therefore, showing perhaps paying effective forwards the ‘big bucks’ is important for clubs' business wise. </p>
+    <p>Furthermore, the higher you finish in the Premier League allows for further revenue generating opportunities, which include qualification for other competitions (e.g UEFA Champions League and more lucrative sponsorship deals from global brands like Adidas, who have just agreed to pay Liverpool FC £60,000,000 per season for a partnership.</p>    
+
+    <h4>Analysis of Total Club Weekly Wages on Team Performance</h4>
+    <p>Secondly, I wanted to complete an analysis on clubs as a whole as football is a team sport and ‘it’s better to have a great team than a team of greats’ (Sinek), meaning that a group of players who are willing to work hard for each other will go further than a team of selfish individuals. I wanted to see if there was a significant correlation between the cumulative amount teams pay their players and the overall teams performance levels. </p>
+    <p>To analyse this, I ranked clubs based on ten statistics including goals, assists, average possession, yellow cards, red cards, fouls committed, fouls drawn, crosses, interceptions, and tackles. After this I combined them to give each club an average ranking and plotted the scatter graph below to compare with their total weekly wage bill. </p>
+    <img src="average_rank_vs_weekly_wages.png" alt="Scatter Graph of Average Rank against Total Squad Weekly Wages" width="900" height="600">
+    <p>As you can see from the graph there is a clear negative correlation between weekly wages and a team's average rank, which is what we would’ve expected, as often the best teams have the best players and the best players demand higher wages. Furthermore, the best teams have higher revenues, which means they can pay higher wages than the lower performing teams. For example, teams like Arsenal FC, who were top of the premier league at the time I collected this data, are 1st in average rank and 2nd in their total weekly wage. Furthermore, worse teams like Wolves, who have been in last place in the premier league all season, are 19th place in average rank and also have a below average weekly wage bill. </p>
+    <p>However, it is interesting we see some outliers. One being Tottenham Hotspur who finished 9th in the Deloitte Football Money League 2026, generating €672.2 million in revenue (Deloitte, 2026), which allows them to have a high weekly wage bill of £2,556,000. Unfortunately for them this has not translated to on-field performance as their average rank was 15th, and they find themselves in the relegation battle at the time of writing this. </p>
+    <p>Another key outlier in the data is Nottingham Forest, who although not having the spending power of other big-name teams, they make do and still manage to be joint with Chelsea in average rank despite Chelsea spending about £1,200,000 more per week. This is perhaps because of the Nottingham Forest owner, Evangelos Marinakis, who is rumoured to have a dodgy past. According to the BBC this includes fraud, blackmail, and even bombing a referee's bakery (2025). Therefore, some people may think he does not disclose everything that he pays his players or he has ways to bargain his players weekly wage downwards. </p>
+
+    <h5>Regression Analysis of Weekly Wages against certain Statistics</h5>
 
 </html>
 
