@@ -20,6 +20,7 @@ plt.title('Distribution of Weekly Wages by Position')
 plt.xlabel('Position')
 plt.ylabel('Weekly Wages (GBP)')
 plt.xticks(rotation=45)
+plt.savefig('data_analysis/wages_by_position_boxplot.png')
 plt.show()
 
 # Can see that as positions get higher up the pitch on average wages do rise 
