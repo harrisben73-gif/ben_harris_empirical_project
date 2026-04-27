@@ -7,7 +7,76 @@
 </head>
 <body>
     <h1>Ben Harris Premier League Analysis</h1>
+    <img src="https://resources.premierleague.pulselive.com/premierleague/photo/2025/06/02/fd4148da-fb5b-4f85-b813-8ca47c11e9c2/FotoJet-2025-06-02T152659.040.jpg" alt="Image of 2025/26 Premier League Football">
     <p>Welcome to the Premier League analysis page for Ben Harris. Here you can find insights and statistics about his performance in the league.</p>
+    <p>For this empirical project I decided to complete an analysis of what are the main contributors to a PL footballers wage as this partly ties in economics, with my passion for football. This report has 5 main parts including: 
+1.	Summary Statistics
+2.	Analysis of Wages for certain Positions 
+3.	Analysis of Total Club Wages on Team Performance 
+4.	A Regression Analysis of certain Statistics against individual player Wages
+5.	A Goalkeeper Analysis 
+For this report I found my data on a reliable website called fbref.com, which collects data on many sports, but most importantly had reliable data on PL player and club performance measures and wages. I first started by copying the copious amounts of data into an excel file so I could get started with the data cleaning in VS code. This included using python, specifically pandas, Linux/WSL and SQLite. 
+</p>
 </body>
+
+<body>
+    <h2>Summary Statistics</h2>
+    <p>Firstly, I thought I’d start with seeing how many players we have in our cleaned dataset. After finding the length of the dataset we can see we have access to 501 footballers all with various levels of performance and wages. 
+    A good place to start with our analysis is to look at some common summary statistics of the player's weekly wage. 
+    </p>
+    <style> 
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    <table>
+        <tr>
+            <th>Statistic</th>
+            <th>Weekly Wage Value</th>
+        </tr>
+        <tr>
+            <td>Mean</td>
+            <td>£77,749.04</td>
+        </tr>
+        <tr>
+            <td>Median</td>
+            <td>£60,000.00</td>
+        </tr>
+        <tr>
+            <td>Mode</td>
+            <td>£50,000.00</td>
+        </tr>
+        <tr>
+            <td>Variance</td>
+            <td>£4,041,176,647.80</td>
+        </tr>
+        <tr>
+            <td>Standard Deviation</td>
+            <td>£63,570.25</td>
+        </tr>
+        <tr> 
+            <td>Maximum</td>
+            <td>Erling Haaland with £525,000.00 per week</td>
+        </tr>
+        <tr>
+            <td>Minimum</td>
+            <td>Lyle Foster with £769.00 per week</td>
+        </tr>
+    </table>
+    <p>From this output we can see that the mean of £77,749.04 is higher than the median of £60,000, which shows our data is skewed towards the right and therefore shows a small number of highly paid players are pulling the mean up, for example Erling Haaland who is the highest paid player taking home £525,000 per week. 
+    The mode or most common weekly wage is at £50,000, which suggests a high concentration of players around this wage in the Premier League as this is often seen as a typical contract value. 
+    Now moving onto the spread of PL footballer's weekly wages, as with a variance of about £4,000,000,000, which when square rooted translates to a standard deviation of £63,570 further suggests the inequality in the league as players like Lyle Foster earn less than 0.15% of Erling Haaland’s wage, but could there be reasons for this?
+    </p>
 </html>
 
