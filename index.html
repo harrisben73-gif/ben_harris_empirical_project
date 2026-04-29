@@ -12,7 +12,7 @@
 <body>
     <h1>Ben Harris Premier League Analysis</h1>
     <img src="https://resources.premierleague.pulselive.com/premierleague/photo/2025/06/02/fd4148da-fb5b-4f85-b813-8ca47c11e9c2/FotoJet-2025-06-02T152659.040.jpg" alt="Image of 2025/26 Premier League Football" width="900" height="600">
-    <p>Welcome to the Premier League analysis page for Ben Harris. Here you can find insights and statistics about his performance in the league.</p>
+    <p>Welcome to the Premier League analysis blog for Ben Harris.</p>
     <p>For this empirical project I decided to complete an analysis of what are the main contributors to a PL footballers wage as this partly ties in economics, with my passion for football. This report has 5 main parts including:</p>
     <ol>
         <li>Summary Statistics</li>
@@ -83,7 +83,7 @@
     Now moving onto the spread of PL footballer's weekly wages, as with a variance of about £4,000,000,000, which when square rooted translates to a standard deviation of £63,570 further suggests the inequality in the league as players like Lyle Foster earn less than 0.15% of Erling Haaland’s wage, but could there be reasons for this?
     </p>
 
-    <h3>Analysis of Wages for Certain Positions</h3>
+    <h2>Analysis of Wages for Certain Positions</h2>
     <p>For this section of my empirical project, I wanted to see the impact, that being in a certain position had on a player's wages as others like O’Hanlon think ‘that forwards and midfielders are the premium positions in the Premier League’ (2025). I thought the best way to show this visually would be to group players into their dominant position and then create an individual box plot for each one.</p>
     <img src="./data_analysis/wages_by_position_boxplot.png" alt="Box Plot of Weekly Wages by Position" width="900" height="600">
     <table>
@@ -113,7 +113,7 @@
     <p>The main reason for this is forwards are directly responsible for scoring goals, which is how you win games, as for example if a defender defends very well each game and never concedes a goal there is a chance they could still draw many games if they do not have effective forwards. As a result of this the team will gain less points than another team who has more attacking threat, which will result in a lower league position. This is especially important in the Premier League, as it gives out the most prize money due to its global recognition. Using data from Chowdhury (2025) we can see that Liverpool, who finished first, earned £65,700,000 more than Southampton who finished last, with each position earning you about £3,115,000 extra. Therefore, showing perhaps paying effective forwards the ‘big bucks’ is important for clubs' business wise. </p>
     <p>Furthermore, the higher you finish in the Premier League allows for further revenue generating opportunities, which include qualification for other competitions (e.g UEFA Champions League and more lucrative sponsorship deals from global brands like Adidas, who have just agreed to pay Liverpool FC £60,000,000 per season for a partnership.</p>    
 
-    <h4>Analysis of Total Club Weekly Wages on Team Performance</h4>
+    <h2>Analysis of Total Club Weekly Wages on Team Performance</h2>
     <p>Secondly, I wanted to complete an analysis on clubs as a whole as football is a team sport and ‘it’s better to have a great team than a team of greats’ (Sinek), meaning that a group of players who are willing to work hard for each other will go further than a team of selfish individuals. I wanted to see if there was a significant correlation between the cumulative amount teams pay their players and the overall teams performance levels. </p>
     <p>To analyse this, I ranked clubs based on ten statistics including goals, assists, average possession, yellow cards, red cards, fouls committed, fouls drawn, crosses, interceptions, and tackles. After this I combined them to give each club an average ranking and plotted the scatter graph below to compare with their total weekly wage bill. </p>
     <img src="./data_analysis/average_rank_vs_weekly_wages.png" alt="Scatter Graph of Average Rank against Total Squad Weekly Wages" width="900" height="600">
@@ -121,7 +121,7 @@
     <p>However, it is interesting we see some outliers. One being Tottenham Hotspur who finished 9th in the Deloitte Football Money League 2026, generating €672.2 million in revenue (Deloitte, 2026), which allows them to have a high weekly wage bill of £2,556,000. Unfortunately for them this has not translated to on-field performance as their average rank was 15th, and they find themselves in the relegation battle at the time of writing this. </p>
     <p>Another key outlier in the data is Nottingham Forest, who although not having the spending power of other big-name teams, they make do and still manage to be joint with Chelsea in average rank despite Chelsea spending about £1,200,000 more per week. This is perhaps because of the Nottingham Forest owner, Evangelos Marinakis, who is rumoured to have a dodgy past. According to the BBC this includes fraud, blackmail, and even bombing a referee's bakery (2025). Therefore, some people may think he does not disclose everything that he pays his players or he has ways to bargain his players weekly wage downwards. </p>
 
-    <h5>Regression Analysis of Weekly Wages against Certain Statistics</h5>
+    <h2>Regression Analysis of Weekly Wages against Certain Statistics</h2>
     <p>For another piece on analysis I wanted to dive deeper into what actually causes player to be paid more than other players specifically outfield players, which meant using a regression software like random forest regressor’s and average treatment effects (ATE). Firstly, I used the Random Forest Regressor extension from scikit-learn, which builds decision trees on random subsets of my data and then averages their predictions. Then I used Average Treatment Effects (ATE) to measure the casual impact of being above average for certain statistics. </p>
     <table>
         <tr>
@@ -147,7 +147,7 @@
     <p>By looking at individual coefficients, we can see that a player with above average goals scored, will see a higher wage by on average £28,117 than a player with below average goals. This statistic is also significant as the p-value is 0.0000 showing compelling evidence this variable matters. Secondly, we can also see that a player with above average assists is paid £29,995 more on average than someone with low assists, showing that assists may have more of an impact on wage than goals do. </p>
     <p>Lastly, we can see that the skew is positive at 1.946 backing up our point earlier that few players like Erling Haaland are pulling the average weekly wage upwards and the kurtosis of 9.505 shows we have fat tails for this data, which again indicated extreme outliers. </p>
 
-    <h6>Goalkeeper Analysis</h6>
+    <h2>Goalkeeper Analysis</h2>
     <p>In this section of the project, I wanted to try to use Linux/WSL and SQL to some complete data cleaning and analysis and then combine this with python for more visual data analysis. </p>
     <img src="./goalkeeper_analysis/weeklywages_savepercentage.png" alt="Scatter Graph of Save Percentage against Weekly Wage with Regression Line" width="900" height="600">
     <p>Firstly, I wanted to use a key measurement of a goalkeeper's performance, which is save percentage as Rose says, ‘for many years the role of a goalkeeper was to keep the ball out of their net’ (2025). Therefore, it is likely we would see a strong correlation between weekly wage and save percentage. However, we see that the correlation is 0.2158 (4 s.f), which is lower than expected, perhaps because in the modern game goalkeepers are not just expected to save shots, ‘they are now heavily involved in a team’s tactical play’ (2025, Rose), which means other attributes, like technical ability on the ball, can help a goalkeeper become more price inelastic. </p>
@@ -160,7 +160,9 @@
         Ben Harris | BSc Economics | University of Exeter
     </footer>
 
-    <h7>List of References</h7>
+    <p></p>
+
+    <h2>List of References</h2>
     <p>O’Hanlon. R (2025, December 26) How much is each position really worth in the Premier League? </p>
     <p>Available at: https://www.espn.co.uk/football/story/_/id/47409498/how-much-position-really-worth-premier-league</p>
     <p>Chowdhury. T (2025, July 14) How much did Premier League clubs earn in prize money? </p>
