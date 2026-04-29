@@ -2,8 +2,7 @@
 
 Welcome, this is the repository I will be using to track work for my Data Science for Economics (BEE2041) Empirical Project. 
 
-You can find my project output using the link below 
-https://harrisben73-gif.github.io/ben_harris_empirical_project
+[View My Emprical Project](https://harrisben73-gif.github.io/ben_harris_empirical_project)
 
 ## Description 
 
