@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben Harris Premier League Analysis</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Ben Harris Premier League Analysis</h1>
     <img src="https://resources.premierleague.pulselive.com/premierleague/photo/2025/06/02/fd4148da-fb5b-4f85-b813-8ca47c11e9c2/FotoJet-2025-06-02T152659.040.jpg" alt="Image of 2025/26 Premier League Football" width="900" height="600">
@@ -12,16 +16,14 @@
     <p>For this empirical project I decided to complete an analysis of what are the main contributors to a PL footballers wage as this partly ties in economics, with my passion for football. This report has 5 main parts including:</p>
     <ol>
         <li>Summary Statistics</li>
-        <li>Analysis of Wages for certain Positions</li>
-        <li>Analysis of Total Club Wages on Team Performance</li>
-        <li>A Regression Analysis of certain Statistics against individual player Wages</li>
-        <li>A Goalkeeper Analysis</li>
+        <li>Analysis of Wages for Certain Positions</li>
+        <li>Analysis of Total Club Weekly Wages on Team Performance</li>
+        <li>Regression Analysis of Weekly Wages against Certain Statistics</li>
+        <li>Goalkeeper Analysis</li>
     </ol>
     <p></p>For this report I found my data on a reliable website called fbref.com, which collects data on many sports, but most importantly had reliable data on PL player and club performance measures and wages. I first started by copying the copious amounts of data into an excel file so I could get started with the data cleaning in VS code. This included using python, specifically pandas, Linux/WSL and SQLite. 
     </p>
-</body>
 
-<body>
     <h2>Summary Statistics</h2>
     <p>Firstly, I thought I’d start with seeing how many players we have in our cleaned dataset. After finding the length of the dataset we can see we have access to 501 footballers all with various levels of performance and wages. 
     A good place to start with our analysis is to look at some common summary statistics of the player's weekly wage. 
@@ -81,7 +83,7 @@
     Now moving onto the spread of PL footballer's weekly wages, as with a variance of about £4,000,000,000, which when square rooted translates to a standard deviation of £63,570 further suggests the inequality in the league as players like Lyle Foster earn less than 0.15% of Erling Haaland’s wage, but could there be reasons for this?
     </p>
 
-    <h3>Analysis of Wages for certain Positions</h3>
+    <h3>Analysis of Wages for Certain Positions</h3>
     <p>For this section of my empirical project, I wanted to see the impact, that being in a certain position had on a player's wages as others like O’Hanlon think ‘that forwards and midfielders are the premium positions in the Premier League’ (2025). I thought the best way to show this visually would be to group players into their dominant position and then create an individual box plot for each one.</p>
     <img src="./data_analysis/wages_by_position_boxplot.png" alt="Box Plot of Weekly Wages by Position" width="900" height="600">
     <table>
@@ -119,7 +121,7 @@
     <p>However, it is interesting we see some outliers. One being Tottenham Hotspur who finished 9th in the Deloitte Football Money League 2026, generating €672.2 million in revenue (Deloitte, 2026), which allows them to have a high weekly wage bill of £2,556,000. Unfortunately for them this has not translated to on-field performance as their average rank was 15th, and they find themselves in the relegation battle at the time of writing this. </p>
     <p>Another key outlier in the data is Nottingham Forest, who although not having the spending power of other big-name teams, they make do and still manage to be joint with Chelsea in average rank despite Chelsea spending about £1,200,000 more per week. This is perhaps because of the Nottingham Forest owner, Evangelos Marinakis, who is rumoured to have a dodgy past. According to the BBC this includes fraud, blackmail, and even bombing a referee's bakery (2025). Therefore, some people may think he does not disclose everything that he pays his players or he has ways to bargain his players weekly wage downwards. </p>
 
-    <h5>Regression Analysis of Weekly Wages against certain Statistics</h5>
+    <h5>Regression Analysis of Weekly Wages against Certain Statistics</h5>
     <p>For another piece on analysis I wanted to dive deeper into what actually causes player to be paid more than other players specifically outfield players, which meant using a regression software like random forest regressor’s and average treatment effects (ATE). Firstly, I used the Random Forest Regressor extension from scikit-learn, which builds decision trees on random subsets of my data and then averages their predictions. Then I used Average Treatment Effects (ATE) to measure the casual impact of being above average for certain statistics. </p>
     <table>
         <tr>
@@ -154,6 +156,10 @@
     <img src="./goalkeeper_analysis/goalkeeper_age_distribution.png" alt="Histogram of Goalkeeper Age against Frequency" width="900" height="600">
     <p>However, from this we can still see that PL goalkeepers are often older instead of younger, which is mainly because although being a goalkeeper requires lots of athleticism it is not as much as outfield players require. Therefore, they have less stress on their bodies so are able to spread their careers further than positions that require more athleticism, for example forwards and midfielders who run up to 13km a game (Power, 2025). Leading on from this we also see that the youngest goalkeeper in the league is Melker Ellborg at almost 23 years old, which is almost 7 years older than young outfield prodigies like Max Dowman, who has not even completed his GCSEs yet. </p>
 
+    <footer>
+        Ben Harris | BSc Economics | University of Exeter
+    </footer>
+
     <h7>List of References</h7>
     <p>O’Hanlon. R (2025, December 26) How much is each position really worth in the Premier League? </p>
     <p>Available at: https://www.espn.co.uk/football/story/_/id/47409498/how-much-position-really-worth-premier-league</p>
@@ -171,6 +177,6 @@
     <p>Available at: https://www.football365.com/news/opinion-premier-league-goalkeepers-getting-younger-henderson-bazanu</p>
     <p>Power. L (2025, October 16) How Much Does a Premier League Footballer Run Per Game? </p>
     <p>Available at: https://premierleaguenow.co.uk/2025/10/16/how-much-does-a-premier-league-footballer-run-per-game/</p>
-
+</body>
 </html>
 
