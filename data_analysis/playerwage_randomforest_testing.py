@@ -71,6 +71,8 @@ X_ate = merged_player_data_noGK[['high_goals', 'high_assists', 'high_minutes', '
 Y_ate = merged_player_data_noGK['Weekly Wages (GBP)']
 
 model = sm.OLS(Y_ate, sm.add_constant(X_ate)).fit()
+
+
 with open('data_analysis/regression_results.html', 'w') as f:
     f.write(model.summary().as_html())
 print(model.summary2())
