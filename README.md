@@ -60,11 +60,18 @@ ben_harris_empirical_project/
         - merged_player_data/
 - scripts/ 
     - data_cleaning.py
+	- index.html
+	- style.css
 - goalkeeper_analysis/
     - data/
         - clean/
+			- gk_combined.csv
         - processed/
+			- gk_wages.csv
+			- gkstats_clean.csv
         - raw/
+			- pl_dataset_2526_gkstats.csv
+			- pl_dataset_2526_playerwage.csv
     - cleaningstats.sh
     - cleaningwage.sh
     - combiningstatswage.py
@@ -73,6 +80,7 @@ ben_harris_empirical_project/
     - gk_wages.csv 
     - pl_dataset2526_playerwage.csv 
 - data_analysis/
+	- summary_statistics.py
     - clubwages_stats_analysis.py 
     - wages_position_analysis.py 
     - playerwage_randomforest_testing.py
@@ -88,45 +96,47 @@ I have listed the software platforms/python packages and versions of these in [I
 
 2. How to Clean the Data 
 
-By using mainly pandas and numpy to clean my data in the 'data_cleaning.py' I was firstly able to find out the main problems with my data. This included: wage data being in multiple currencies and having symbols like $£,() included in the data, some clubs having hidden spaces in their names, the nationality column showing en ENG instead of just ENG, the minutes column being a string, and the position column showing multiple positions. Luckily, I did not find many missing values, apart from in the Nationality column, which was not essential for my analysis. 
+By using mainly pandas and numpy to clean my data in 'data_cleaning.py' I was firstly able to find out the main problems with my data. This included: wage data being in multiple currencies and having symbols like $£,() included in the data, some clubs having hidden spaces in their names, the nationality column showing en ENG instead of just ENG, the minutes column being a string, and the position column showing multiple positions. Luckily, I did not find many missing values, apart from in the Nationality column, which was not essential for my analysis. 
 
-- To fix the first issue I created a python function called extract_pounds(value), which starts out by checking for missing values then converts the data into a string and after this uses a regular expression to extract the number after the £ sign and finally removes the commas and converts this number into an integer
+- To fix the first issue I created a python function called extract_pounds(value), which starts out by checking for missing values then converts the data into a string and after this uses a regular expression to extract the number after the £ sign and finally removes the commas and converts this number into an integer.
 
-- To fix the fact that club names where slightly different in pl_dataset_2526_clubstats.csv and pl_dataset_2526_clubwage.csv, I had to firstly check the differences and then I could use the str.replace function to substitute the part of string I did not want with something else that matches the other dataset, therefore allowing us the merge both datasets by club name
+- To fix the fact that club names where slightly different in pl_dataset_2526_clubstats.csv and pl_dataset_2526_clubwage.csv, I had to firstly check the differences and then I could use the str.replace function to substitute the part of string I did not want with something else that matches the other dataset, therefore allowing us the merge both datasets by club name.
 
-- To fix the nationality column, we used a similar command called str.split, which allowed us to only keep the last word in each string, therefore allowing us to have a cleaner nationalities column if we needed to use it
+- To fix the nationality column, we used a similar command called str.split, which allowed us to only keep the last word in each string, therefore allowing us to have a cleaner nationalities column if we needed to use it.
 
-- Turning the minutes column into a numeric value was a simple fix as we just used pandas to transform the strong into numeric, which was no problem as the values in the column where all integers already
+- Turning the minutes column into a numeric value was a simple fix as we just used pandas to transform the string into numeric, which was no problem as the values in the column where all integers already.
 
-- The position column was another simple fix by using the pandas function .replace again, where I knew the first position listed was the players primary position, so for example if there positions was listed as FW, MF the new column would show solely FW
+- The position column was another simple fix by using the pandas function .replace again, where I knew the first position listed was the players primary position, so for example if there positions was listed as FW, MF the new column would show solely FW.
 
 - Then finally as I merged our datasets so I had statistics and wages all in two datasets merged_player_data.csv and merged_club_data.csv, I had to drop some columns that had duplicated or were irrelevant to my analysis. 
 
-- In the end we can see that the only columns with missing data is minutes, but I did not want to remove players who did not have minute statistics as this would leave me with a significantly lower sample size
+- In the end we can see that the only columns with missing data is minutes, but I did not want to remove players who did not have minute statistics as this would leave me with a significantly lower sample size, and may make my analysis less reliable.
 
 
 I also had a small sub-project where I would be analysing the goalkeepers in the league and aim to use more Linux and SQLite code. To start with the data cleaning I used two bash scripts cleaningstats.sh and cleaningwage.sh, and the terminal after going into wsl. 
 
 - The cleaningstats.sh file checks over the datset pl_dataset_2526_gkstats.csv from the data/raw folder and checks for duplicates and empty rows and then temporarily stores them in a file and then transfers them back to a new file called gkstats_clean.csv, which is stored in the data/processed folder. 
 
-- The cleaningwage.sh file simply uses the pl_dataset_2526_playerwage.csv file in the data/raw folder and uses the awk command to filter players whose position is a goalkeeper and creates a new file called gk_wages.csv, storing it in data/processed 
+- The cleaningwage.sh file simply uses the pl_dataset_2526_playerwage.csv file in the data/raw folder and uses the awk command to filter players whose position is a goalkeeper and creates a new file called gk_wages.csv, storing it in data/processed as well.
 
-- Then to combine both these datasets I chose to use python as this was most effecient and more likely to be accurate. In the file combiningstatswage.py I firstly saved both the clean datasets and them merged them based on player name and created the new final file called gk_combined.csv ini the folder data/clean. Then I had to perform similar things as some of the data had the same issues for example the wages, minutes and age column where I just wanted age in years not years and days. 
+- Then to combine both these datasets I chose to use python as this was most efficient and more likely to be accurate. In the file combiningstatswage.py I firstly saved both the clean datasets and them merged them based on player name and created the new final file called gk_combined.csv in the folder data/clean. Then I had to perform similar things as before as some of the data had the same issues for example the wages, minutes and age column where I just wanted age in years not years and days. 
 
 3. How to Run the Analysis 
 
 After cleaning all the data I had two main datasets, which I used for the analysis called merged_player_data.csv and merged_club_data.csv, which had come from merging the cleaned versions of pl_dataset_2526_playerstats.csv with pl_dataset_2526_playerwage.csv and pl_dataset_2526_clubstats.csv with pl_dataset_2526_clubwage.csv using python.
 
-For my analysis I wanted to come up with some visual as well as some statistical insights, which meant importing specific python functions like matplotlib, seaborn, sklearn and statsmodels as this would help us get a better understanding of the data and make it easier to spot trends.
+For my analysis I wanted to come up with some visual as well as some statistical insights, which meant importing specific python functions like matplotlib, seaborn, EconML and statsmodels as this would help us get a better understanding of the data and make it easier to spot trends.
 
 I will now go over the files I have used to analyse my data 
 
-- Firstly, I created wages_position_analysis.py, which main aim was to analyse how playing a certain position can effect the amount PL footballers get paid. By using mainly matplotlib I was able to create a boxplot, which showed that as players do get further up the pitch they often do see higher wages. To further back this point up I created a table, which showed that on average goalkeepers and defenders had similar average weekly wages, but midfielders had on average £8,000, and forwards had on average £16,000 more. 
+- Firstly, I created wages_position_analysis.py, which main aim was to analyse how playing a certain position can effect the amount PL footballers get paid. By using mainly matplotlib I was able to create a boxplot, which showed that as players play further up the pitch they often do see higher wages. To further back this point up I created a table, which showed that on average goalkeepers and defenders had similar average weekly wages, but midfielders had on average £8,000, and forwards had on average £16,000 more. 
 
-- Secondly, I created the file clubwages_stats_analysis.py, where my main aim was to rank clubs by certain statistics and then create a graph comparing their average rank to the total weekly wages of that club. Using the python function .rank I found the ranks from 10 statsitics and then found the mean of this and saved it as a new variable. Finally, I used matplotlib to plot this against the total weekly wage of all the players in the club. 
+- Secondly, I created the file clubwages_stats_analysis.py, where my main aim was to rank clubs by certain statistics and then create a graph comparing their average rank to the total weekly wages of that club. Using the python function .rank I found the ranks from 10 statsitics and then found the mean of this and saved it as a new variable. Finally, I used matplotlib to plot this against the total weekly wage of all the players in the club, to see a clear negative correlation.
 
-- Lastly, I created the file playerwage_randomforest_testing.py, where I was interested in computing a regression analysis using a random forest regressor and average treatment effects (ATE). Using the random forest regressor by setting Y to weekly wages and X to 13 statistics I was able to find the mean squared error and R^2 statistic. However, I also wanted to find the average treatment effects of individual statistics, which meant first having to split the population in 2 groups, above average and below average. After this I used statsmodels to provide my regression coefficients and p-values of the regression.
+- Next, I created the file playerwage_randomforest_testing.py, where I was interested in computing a regression analysis using a random forest regressor and average treatment effects (ATE). Using the random forest regressor by setting Y to weekly wages and X to 13 statistics I was able to find the mean squared error and R^2 statistic, which showed poor fit. However, I also wanted to find the average treatment effects of individual statistics, which meant first having to split the population in 2 groups, above average and below average. After this I used statsmodels to provide my regression coefficients and p-values of the regression, which showed a better fit.
+
+- Lastly, I created the file summary_statistics.py so I was able to see the averages of player weekly wage data including the mean, median, mode, minimum and maximum values. 
 
 I also had to complete data analysis for my goalkeeper sub-project, where I mainly used SQLite3 and python, specifically pandas and matplotlibs.
 
-- By using SQLite3 I was able to put my data into an SQL table and then find some simple summary statistics. I then moved onto a more detailed analysis, which involved grouping data to spot differences between certain groups when it comes to wages and statistics. Furthermore, to back up my SQL analysis I used matplotlib to show the data visually on a graphand then the .corr function in python for further analysis. 
+- By using SQLite3 I was able to put my data into an SQL table and then find some simple summary statistics. I then moved onto a more detailed analysis, which involved grouping data to spot differences between certain groups when it comes to wages and statistics. Furthermore, to back up my SQL analysis I used matplotlib to show the data visually on a graph and then the .corr function in python for further analysis. 
