@@ -65,13 +65,13 @@ ben_harris_empirical_project/
 - goalkeeper_analysis/
     - data/
         - clean/
-			-
+			- gk_combined.csv
         - processed/
-			- 
-			- 
+			- gk_wages.csv
+			- gkstats_clean.csv
         - raw/
-			-
-			-
+			- pl_dataset_2526_gkstats.csv
+			- pl_dataset_2526_playerwage.csv
     - cleaningstats.sh
     - cleaningwage.sh
     - combiningstatswage.py
